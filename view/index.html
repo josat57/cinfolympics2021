@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/png">
+    <title>Cinfolympics 2021 Season</title>
+</head>
+<body>
+    <main class="main-container">
+        <header class="header" style="display: flex; align-items: center; justify-content: center;">
+        </header>
+        <div class="main-content d-flex">
+            <aside class="side-bar col-4">
+                <ul class="side-menu">
+                    <img src="../assets/images/favicon.png" alt="Cinfolympics" id="brand-logo" class="brand-logo">
+                    <li class="menu-items col-12" id="teams-column">Add Team</li>
+                    <li class="menu-items col-12" id="games-column">Add Games</li>
+                    <li class="menu-items col-12" id="scores-column">Add Scores</li>
+                    <li class="menu-items col-12" id="fixtures-column">Add Fixtures</li>
+                    <li class="menu-items col-12" id="participants-column">Add Participants</li>
+                </ul>
+            </aside>
+            <div class="content col-8 my-2 forms-container">
+                <section class="col-md-6 m-2 teams-column" id="teams-column1">
+                    <div class="card col-12">
+                        <div class="card-header">
+                            <h3 class="card-title display-6 text-uppercase">Add New Teams</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="#" class="team-form" id="teams_form">
+                                <div class="form-group  mx-3 p-2">
+                                    <label for="">TeamName:</label>
+                                    <input type="text" name="teamName" id="teamName" class="form-control" placeholder="Team Name" />
+                                </div>
+                                <div class="form-group mx-3 p-2">
+                                    <label for="description">Description</label>
+                                    <input type="text" name="description" class="form-control" id="description" placeholder="Description" />
+                                </div>
+                                <div class="form-group mx-3 p-2">
+                                    <label for="teamlogo">Upload Team Logo</label>
+                                    <input type="file" name="teamlogo" id="teamlogo" class="form-control" placeholder="Team Logo" />
+                                </div>
+                                <div class="form-group m-3 p-2 col-12">
+                                    <img src="#" alt="" class="brand-img mx-auto" id="imgPreview">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <button type="button" id="btn_teams" class="btn btn-primary btn-lg col-5 rounded">Submit</button>
+                            <a href="players.html" class="btn btn-outline-primary btn-lg col-5 rounded">Add Player</a>
+                        </div>
+                    </div>
+                </section>            
+
+                <section class="col-md-6 m-2 games-column" id="games-column1">
+                    <div class="card col-12">
+                        <div class="card-header">
+                            <h3 class="card-title display-6 text-uppercase">Add New Game</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="#" class="games-form" id="games_form">
+                                <div class="form-group  mx-3 p-2">
+                                    <label for="gameName">Game Name:</label>
+                                    <input type="text" name="gameName" id="gameName" class="form-control" placeholder="Game Name" />
+                                </div>
+                                <div class="form-group mx-3 p-2">
+                                    <label for="gameRules">Game Rules</label>
+                                    <textarea type="text" name="gameRules" class="form-control" id="gameRules" cols="25" rows="8"></textarea>
+                                </div>
+                                <div class="form-group mx-3 p-2 col-12 d-flex">
+                                    <div class="col-md-5 mr-2">
+                                        <label for="teamSize">Team Size</label>
+                                        <input type="text" name="teamSize" id="teamSize" class="form-control" placeholder="Team Size" />
+                                    </div>
+                                    <div class="col-md-6 mx-3">
+                                        <label for="gameType">Select game type</label>
+                                        <select name="gameType" id="gameType" class="form-control">
+                                            <option default value="">Select game type</option>
+                                            <option value="board">Borad Game</option>
+                                            <option value="Track">Track Game</option>
+                                            <option value="Field">Feild Game</option>
+                                            <option value="Virtual">Virtual Game</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" id="btn_games" class="btn btn-primary btn-lg col-6 m-2 rounded-pill">Submit</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="col-md-6 m-2 scores-column" id="scores-column1">
+                    <div class="card col-12">
+                        <div class="card-header">
+                            <h3 class="card-title display-6 text-uppercase">Add Games Scores</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="#" class="scores-form">
+                                <div class="form-group  mx-3 p-2">
+                                    <label for="fixturescore">Game to Score</label>
+                                    <select name="fixturescore" id="fixturescore" class="form-control">
+                                        <option value="">Select game to score</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mx-3 p-2">
+                                    <label for="teamScore">Team to Score</label>
+                                    <select name="teamScore" class="form-control" id="teamScore" placeholder="Team to score">
+                                        <option value="">Select team to score</option>
+                                    </select>                                        
+                                </div>
+                                <div class="form-group mx-3 p-2 d-flex justify-content-between">                                    
+                                    <div class="col-md-5 mr-1">
+                                        <label for="pointsr1">Enter Point</label>
+                                        <input type="text" name="pointsr1" id="pointsr1" class="form-control" placeholder="Point" />
+                                    </div>
+                                    <div class="col-md-5 ml-1">
+                                        <label for="pointsr2">Enter Point</label>
+                                        <input type="text" name="pointsr2" id="pointsr2" class="form-control" placeholder="Point" />                                            
+                                    </div>
+                                </div>
+                                <div class="form-group mx-3 p-2 d-flex justify-content-between">                                    
+                                    <div class="col-md-5 mr-1">
+                                        <label for="gamestatus">Game Status(Won|Lost)</label>
+                                        <input type="text" name="gamestatus" id="gamestatus" class="form-control" placeholder="Games Status" />
+                                    </div>
+                                    <div class="col-md-5 ml-1">
+                                        <label for="totalpoints">Total Points</label>
+                                        <input type="text" name="totalpoints" id="totalpoints" class="form-control" placeholder="TotalPoints" />                                            
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" id="btnScores" class="btn btn-primary btn-lg col-6 m-2 rounded-pill">Submit</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="col-md-6 m-2 fixtures-column" id="fixtures-column1">
+                    <div class="card col-12">
+                        <div class="card-header">
+                            <h3 class="card-title display-6 text-uppercase">Add Game Fixture</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="#" class="fixtures-form">
+                                <div class="form-group  ml-3 p-2">
+                                    <label for="getgame">Game:</label>
+                                    <Select name="getgame" id="getgame" class="form-control" placeholder="Game">
+                                        <option value="">Select game</option>
+                                    </Select>
+                                </div>
+                                <div class="form-group ml-3 p-2 col-12 d-flex justify-content-between">
+                                    <div class="col-md-5 mr-2">
+                                        <label for="gameDate">Choose Game Day</label>
+                                        <select name="gameDate" id="gameDate" class="form-control">
+                                            <option default value="">choose game day</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-5 mx-2">
+                                        <label for="gameTime">Choose Game time</label>
+                                        <select name="gameTime" id="gameTime" class="form-control">
+                                            <option default value="">Select game time</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group ml-3 p-2">
+                                    <label for="gameWeek">Select game week</label>
+                                    <select name="gameWeek" id="gameWeek" class="form-control">
+                                        <option default value="">Select game week</option>
+                                        <option value="weekone">Week One</option>
+                                        <option value="weektwo">Week Two</option>
+                                        <option value="weekthree">Week Three</option>
+                                        <option value="weekfour">Week Four</option>
+                                        <option value="weekfive">Week Five</option>
+                                        <option value="weeksix">Week Six</option>
+                                        <option value="weekseven">Week Seven</option>
+                                        <option value="weekeight">Week Eight</option>
+                                        <option value="weeknine">Week Nine</option>
+                                        <option value="weekten">Week Ten</option>
+                                        <option value="weekeleven">Week Eleven</option>
+                                        <option value="weektwelve">Week Twelve</option>
+                                    </select>
+                                </div>
+                                <div class="form-group ml-3 p-2 col-12 d-flex justify-content-between">
+                                    <div class="col-md-5 mr-2">
+                                        <label for="gameDate">Choose First Team</label>
+                                        <select name="firstTeam" id="firstTeam" class="form-control">
+                                            <option default value="">Select fisrt team</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-5 mx-2">
+                                        <label for="secondTeam">Choose Second Team</label>
+                                        <select name="secondTeam" id="secondTeam" class="form-control">
+                                            <option default value="">Select second team</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group ml-3 p-2 col-12 d-flex justify-content-between">
+                                    <div class="col-md-5 mr-2">
+                                        <label for="thirdTeam">Choose Third Team</label>
+                                        <select name="thirdTeam" id="thirdTeam" class="form-control">
+                                            <option default value="">Select third team</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-5 mx-2">
+                                        <label for="fourthTeam">Choose Fourth Team</label>
+                                        <select name="fourthTeam" id="fourthTeam" class="form-control">
+                                            <option default value="">Select fourth team</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" id="btnFixtures" class="btn btn-primary btn-lg col-6 m-2 rounded-pill">Submit</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="col-md-6 m-2 participants-column", id="participants-column1">
+                    <div class="card col-12">
+                        <div class="card-header">
+                            <h3 class="card-title display-6 text-uppercase">Add Game Participants</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="#" class="participants-form">                                
+                                <div class="form-group mx-3 p-2">
+                                    <label for="player">Player</label>
+                                    <select name="player" id="player" class="form-control">
+                                        <option default value="">Select player</option>
+                                    </select>
+                                </div>
+                            
+                                <div class="form-group mx-3 p-2">
+                                    <label for="playerTeam">Team</label>
+                                    <select name="playerTeam" id="playerTeam" class="form-control">
+                                        <option default value="">Select team</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mx-3 p-2">
+                                    <label for="participatingGame">Game</label>
+                                    <select name="participatingGame" id="participatingGame" class="form-control">
+                                        <option default value="">Select game</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" id="btnParticipants" class="btn btn-primary btn-lg col-6 m-2 rounded-pill">Submit</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <footer class="main-footer">
+            <div class="copyright">Cinfolympics &copy; <span id="footerYear"></span></div>
+        </footer>
+    </main>
+
+</body>
+<script src="../assets/js/jquery-3.5.1.min.js"></script>
+<script src="../assets/js/jQueryBlockUI/jqueryblockui.js"></script>
+<script src="../assets/js/jquery.msgbox.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+<script src="../assets/js/main.js"></script>
+
+<script>
+ let year = new Date();
+ let footerYear = document.querySelector("#footerYear");
+ footerYear.textContent = year.getFullYear();
+</script>
+</html>

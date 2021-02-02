@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/png">
+    <title>Cinfolympics 2021 Season</title>
+</head>
+<body>
+    <main class="container-fluid">
+        <div class="content p-4 d-flex justify-content-between">
+            <form action="" class="form col-7" id="playerForm">
+                <div class="card m-auto col-8 col-md-8 col-lg-8 col-sm-12">
+                    <div class="card-header">
+                        <h3 class="display-6">Add New Player to Team</h3>
+                        <p class="text-secondary">Please fill all required feilds marked with <span class="text-danger">*</span></p>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="team">Select Player Team<span class="text-danger">*</span></label>
+                                <select name="team" id="team" class="form-control">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="firstname">FirstName<span class="text-danger">*</span></label>
+                                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="FirstName" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="lastName">LastName<span class="text-danger">*</span></label>
+                                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="LastName" />
+                            </div>
+                        </div>
+                        <div class="form-group col-12 col-md-12 col-lg-12 col-sm-12 d-flex justify-content-between">
+                            <div class="form-group col-5 col-md-5 col-lg-5 col-sm-12">
+                                <label for="dateofbirth">Date of Birth</label>
+                                <input type="date" name="dateofbirth" id="dateofbirth" class="form-control">
+                            </div>
+                        
+                            <div class="form-group col-5 col-md-5 col-lg-5 col-sm-12">
+                                <label for="gender">Select Player Gender<span class="text-danger">*</span></label>
+                                <select name="gender" id="gender" class="form-control">
+                                    <option value="">Select gender</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Male">Male</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-12 col-md-12 col-lg-12 col-sm-12 d-flex justify-content-between">
+                            <div class="form-group col-5 col-md-5 col-lg-5 col-sm-12">
+                                <label for="weight">Player Weight</label>
+                                <input type="text" name="weight" id="weight" class="form-control" placeholder="Player Weight" />
+                            </div>
+                        
+                            <div class="form-group col-5 col-md-5 col-lg-5 col-sm-12">
+                                <label for="height">Player Height</label>
+                                <input type="text" name="height" id="height" class="form-control" placeholder="Player Height" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="dept">Department<span class="text-danger">*</span></label>
+                                <select name="dept" id="dept" class="form-control">
+                                    <option value="">Select department</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="C&A">Content & Accessment</option>
+                                    <option value="Logistics">Logistics</option>
+                                    <option value="Technical">Technical</option>
+                                    <option value="Training">Training</option>
+                                    <option value="Director">Director</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="position">Position In Team<span class="text-danger">*</span></label>
+                                <select name="position" id="position" class="form-control">
+                                    <option value="captain">Captain</option>
+                                    <option value="teamhead">Team Head</option>
+                                    <option value="asthead">Assistant Team Head</option>
+                                    <option value="participant">Participant</option>
+                                    <option value="cheerleader">Cheerleader</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for=""></label>
+                            <input type="file" name="playerphoto" id="playerphoto" class="form-control">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-success rounded" id="btn_players_submit">Add Player</button>
+                        <a href="index.html" class="btn btn-outline-primary rounded">Home</a>
+                        <a href="selectplayers.html" class="btn btn-outline-primary rounded">Select Players</a>
+                    </div>
+                </div>
+            </form>
+            <section class="container-md col-5 bg-dark d-flex justify-content-center align-items-center">
+                <div class="display-player border-1 w-50 h-50" id="displayplayer">
+                    <img src="../assets/images/defaultimg.png" alt="" srcset="" class="brand-img photopreview d-flex justify-content-center align-items-center" id="photopreview" style="width: 100%; height: 100%; box-sizing:border-box; background-size: cover; object-fit: cover;" />
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="../assets/js/jquery-3.5.1.min.js"></script>
+    <script src="../assets/js/jQueryBlockUI/jqueryblockui.js"></script>
+    <script src="../assets/js/jquery.msgbox.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+
+    <script>
+    
+        $(document).ready(function(){
+            $("#btn_players_submit").click(function(e){
+                addPlayers(e)
+            });
+
+            $("#team").change(function(e){
+                var team = $("#team :selected").text();
+                window.localStorage.setItem("team", team);
+            });
+
+            getTeams();
+        });
+        function getTeams() {  
+            var url = "../../api/routindex.php";    
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: {
+                    "action": "get_teams"
+                },
+                success: function (res) {
+                    $.unblockUI();
+                    var json = JSON.parse(res);
+                    console.log(json);
+                    if (json.statuscode == 0) {
+                        var items = json.data;
+                        $('#team').html = "";
+                        var placeholder = "Add Inspectors";
+                        $('#team').text(placeholder);
+                        console.log(items);
+                        $('#team').append($('<option>').text("Select Player Team"));
+                        $.each(items, function(i, obj){
+                            console.log(obj.teamName, obj.teamId);
+                            $('#team').append($('<option>').text(obj.teamName).attr('value', obj.teamId)).trigger('change');
+                        }); 
+                    } else {
+                        $.prompt(json.status);
+                    }
+                }
+            });
+        } 
+
+        function addPlayers(e) {
+            // alert(e.target.id);
+            e.preventDefault();
+            var formData = new FormData(playerForm);
+            formData.append("action", "addplayer");
+            formData.append("teamname", window.localStorage.getItem("team"));
+            var url = "../../api/routindex.php";    
+            
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (res) {
+                    $.unblockUI();
+                    var json = JSON.parse(res);
+                    console.log(json);
+                    if (json.statuscode == 0) {
+                        $.prompt(json.status); 
+                    } else {
+                        $.prompt(json.status);
+                    }
+                }
+            });
+        } 
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function(e) {
+                $('#photopreview').attr('src', e.target.result);
+                }
+                
+                reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+        }
+
+        $("#playerphoto").change(function() {
+            readURL(this);
+            $('#displayplayer').css("display", "flex");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    display: block;
+    background: #2f303a;
+}
+
+.main-header {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    background: rgba(200, 150, 110, 0.9);
+    padding: 5rem 2.5rem;
+}
+
+.main-header > h1 {
+    font-family: 'fira code',
+    'Roboto',
+    'Segoe UI';
+    font-weight: 800;
+}
+
+.main-content {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.main-footer {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:#be345f;
+    box-sizing: border-box;
+    padding: 1.5rem;
+}
+
+.main-footer > .copyright {
+    color: #ffffff;
+    font-family: 'fira code', 'Roboto', 'Segoe UI';
+    font-weight: 400;
+}
+
+#imgPreview {
+    width: 10rem;
+    height: 10rem;
+    display: none;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    object-fit: cover;
+    box-sizing: content-box;
+    background-size: cover;
+    filter: drop-shadow(4px 4px 2px rgba(0,0,0,0.5));
+    border-radius: 360px;
+    align-self: center;
+}
+
+#brand-logo {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    object-fit: cover;
+    box-sizing: content-box;
+    background-size: cover;
+    filter: drop-shadow(4px 4px 2px rgba(0,0,0,0.5));
+    border-radius: 360px;
+    align-self: center;
+}
+
+.side-menu {
+    margin: 0;
+    list-style: none;
+    height: 100vh;
+    background:#02214F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.side-menu > li {
+    box-sizing: border-box;
+    padding: 1rem 0 1rem 2rem;
+    margin: 1rem 0;
+    display: flex;
+    background: #fff;
+    border-radius: 25px 0 0 25px;
+    transition: all 300ms ease-in-out;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+.side-menu > li:hover {
+    cursor: pointer;
+    background: #ad4901d7;
+    color: #fff;
+}
+
+.forms-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.teams-column, .games-column, .scores-column, .fixtures-column, .participants-column {
+    position: absolute;
+    box-sizing: border-box;
+    display: none;
+}
